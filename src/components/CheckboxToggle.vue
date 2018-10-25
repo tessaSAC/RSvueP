@@ -26,7 +26,7 @@ export default {
 
   methods: {
     handleCheck() {
-      this.$emitm('change', )
+      // this.$emit('change', )
     }
   }
 }
@@ -36,15 +36,29 @@ export default {
 .CheckboxToggle {
   position: relative;
 
-  input {
-    width: 0;
-    height: 0;
-    display: none;
-    opacity: 0;
-  }
+  // input {
+  //   width: 0;
+  //   height: 0;
+  //   display: none;
+  //   opacity: 0;
+  // }
 
-  .LabelBasic {
-    &:after {
+  [type="checkbox"] {
+      width: 0;
+      height: 0;
+      display: none;
+      opacity: 0;
+    & + label {
+      cursor: pointer;
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      // apply padding so the switch fits inside the label
+      padding-right: 60px;
+    }
+
+      &:after {
         content: "";
         top: 4px;
         right: 10px;
@@ -53,8 +67,8 @@ export default {
         // use absolute for better positioning
         position: absolute;
         border-radius: 30px;
-    }
-    &+ .toggle {
+      }
+      & + .toggle {
         top: 0;
         width: 20px;
         height: 20px;
@@ -65,32 +79,15 @@ export default {
         pointer-events: none;
         box-shadow: 1px 1px 1px $Color-Theme-100;
         // add some CSS3-animations
-        -webkit-transition: right .1s ease-in, background-color .1s ease-in;
-        -moz-transition: right .1s ease-in, background-color .1s ease-in;
-        -o-transition: right .1s ease-in, background-color .1s ease-in;
-        -ms-transition: right .1s ease-in, background-color .1s ease-in;
-    }
-  }
-
-  [type="checkbox"]:checked,
-    &:checked + label:after {
-        background-color: $Color-Focus;
-    }
-    &:not(:checked) + label:after {
-        background-color: $Color-Theme-100;
-    }
-
-    &:checked + label + .toggle {
-        right:5px;
-        background-color: $Color-Focus;
-    }
-    &:not(:checked) + label + .toggle {
-        right: 25px;
-        background-color: $Color-Theme-100;
-
+        -webkit-transition: right .1s ease-in, $Color-Theme-30d .1s ease-in;
+        -moz-transition: right .1s ease-in, $Color-Theme-30d .1s ease-in;
+        -o-transition: right .1s ease-in, $Color-Theme-30d .1s ease-in;
+        -ms-transition: right .1s ease-in, $Color-Theme-30d .1s ease-in;
+      }
+    // }
     &:focus + label:after,
     &:focus + label + .toggle {
-        box-shadow: 0 0 6px 0 $Color-Focus;
+      box-shadow: 0 0 6px 0 Color-Focus;
     }
     &[disabled] {
       & + label,
@@ -100,6 +97,20 @@ export default {
           opacity: 0.4;
       }
     }
+  }
+  & > [type="checkbox"]:checked + label:after {
+      background-color: $Color-Theme-70;
+  }
+  & > [type="checkbox"]:not(:checked) + label:after {
+      background-color: $Color-Theme-100;
+  }
+  & > [type="checkbox"]:checked + label + .toggle {
+      right:5px;
+      background-color: $Color-Focus;
+  }
+  & > [type="checkbox"]:not(:checked) + label + .toggle {
+      right: 25px;
+      background-color: $Color-Theme-100;
   }
 }
 </style>
