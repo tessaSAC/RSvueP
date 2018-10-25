@@ -1,7 +1,15 @@
 <template>
   <div id="app">
-    <InputBasic></InputBasic>
-    <CheckboxGroup></CheckboxGroup>
+    <InputBasic
+      id="name"
+      label="Your name"
+      optional
+      @input-changed="updateValue($event, 'textInput')"
+    />
+    <CheckboxGroup :choices="choices" legend="choices" label="choices" />
+
+    <!-- <form action="/mycoolguestlist" method="post">
+    </form> -->
   </div>
 </template>
 
@@ -11,20 +19,29 @@ import CheckboxGroup from "./components/CheckboxGroup.vue";
 
 export default {
   name: "app",
+
   components: {
     InputBasic,
     CheckboxGroup,
   },
-};
+
+  data: _ => ({
+    textInput: '',
+    choices: {
+      fish: false,
+      veggies: false,
+    },
+  }),
+
+  methods: {
+    updateValue(val, key) {
+      this[key] = val
+    },
+  },
+}
 </script>
 
 <style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
