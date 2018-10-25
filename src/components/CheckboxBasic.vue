@@ -1,33 +1,24 @@
 <template>
 <div class="CheckboxBasic">
   <input type="checkbox"
-    :id="makeId(label)"
-    :name="makeId(label)"
-    @change="this.$emit"
+    :id="newId"
+    :name="newId"
+    :disabled="disabled"
+    @change="handleCheck"
   />
-  <LabelBasic :id="label" :label="label" />
+  <LabelBasic :id="newId" :label="label" />
 </div>
 </template>
 
 <script>
+import CheckboxMixin from './CheckboxMixin'
 import LabelBasic from './LabelBasic'
 
 export default {
-  props: {
-    label: {
-      type: String,
-      required: true,
-    },
-  },
+  mixins: [ CheckboxMixin, ],
 
   components: {
     LabelBasic,
-  },
-
-  methods: {
-    makeId(id) {
-      return id.split(' ').join('_')
-    },
   },
 }
 </script>

@@ -2,11 +2,11 @@
 <div class="InputBasic">
   <LabelBasic labeling="an id" label="Your name" />
   <div class="inputContainer">
-    <input
+    <input type="text"
       :ref="id"
       :id="id"
+      :disabled="disabled"
       :placeholder="placeholder"
-      type="text"
       @input="updateInput"
     />
     <LabelSublabel :sublabel="optional ? 'optional' : sublabel" />
@@ -29,6 +29,11 @@ export default {
     id: {
       type: String,
       required: false,
+    },
+
+    disabled: {
+      type: Boolean,
+      default: false,
     },
 
     label: {
@@ -58,7 +63,7 @@ export default {
 
   watch: {
     inputText(newInput) {
-      this.$emit('input-changed', newInput)
+      this.$emit('input', newInput)
     }
   },
 

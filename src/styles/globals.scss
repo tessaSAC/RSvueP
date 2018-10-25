@@ -20,6 +20,12 @@ legend {
 
 // Colors:
 $Color-Focus: dodgerblue;
+
+$Color-Theme-100: green;
+$Color-Text-90: lighten($Color-Theme-100, 10%);
+$Color-Text-80: lighten($Color-Theme-100, 20%);
+$Color-Text-70: lighten($Color-Theme-100, 30%);
+
 $Color-Text-100: #111;
 $Color-Text-90: lighten($Color-Text-100, 10%);
 $Color-Text-80: lighten($Color-Text-100, 20%);

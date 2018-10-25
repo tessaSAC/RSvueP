@@ -1,16 +1,11 @@
 <template>
 <div class="CheckboxGroup">
   <LabelBasic :label="label" />
-  <fieldset>
+  <fieldset :disabled="disabled">
     <legend>{{ legend }}</legend>
     <ul>
       <li v-for="(value, key) in choices" :key="key">
-        <input type="checkbox"
-          :id="makeId(key)"
-          :name="makeId(key)"
-          @change="toggleCheck($event, key)"
-        />
-        <LabelBasic :id="key" :label="key" />
+        <CheckboxBasic :label="key" @change="choices[key] = $event" />
       </li>
     </ul>
   </fieldset>
@@ -19,9 +14,15 @@
 
 <script>
 import LabelBasic from './LabelBasic'
+import CheckboxBasic from './CheckboxBasic'
 
 export default {
   props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+
     legend: {
       required: true,
       type: String,
@@ -40,16 +41,13 @@ export default {
 
   components: {
     LabelBasic,
+    CheckboxBasic,
   },
 
   methods: {
     makeId(id) {
       return id.split(' ').join('_')
     },
-
-    toggleCheck(e, key) {
-      this.choices[key] = e.target.checked
-    }
   },
 }
 </script>
@@ -72,6 +70,10 @@ export default {
 
     LabelBasic {
       margin-left: $Text-Size-XS;
+    }
+
+    .CheckboxBasic {
+      margin: 0;
     }
 
     + li {

@@ -28,6 +28,7 @@ export default {
 .LabelBasic {
   display: inline-block;
   margin: 0 $Text-Size-S;
+  cursor: pointer;
   font-size: $Text-Size-M;
   font-weight: 500;
 }
