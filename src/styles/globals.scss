@@ -21,13 +21,15 @@ legend {
 // Colors:
 $Color-Focus: dodgerblue;
 
-$Color-Theme-100: green;
+$Color-Theme-100: darkslateblue;
 $Color-Theme-90: lighten($Color-Theme-100, 10%);
 $Color-Theme-80: lighten($Color-Theme-100, 20%);
 $Color-Theme-70: lighten($Color-Theme-100, 30%);
 $Color-Theme-10d: darken($Color-Theme-100, 10%);
 $Color-Theme-20d: darken($Color-Theme-100, 20%);
 $Color-Theme-30d: darken($Color-Theme-100, 30%);
+
+$Color-Theme-Enemy-100: lightsteelblue;
 
 $Color-Text-100: #111;
 $Color-Text-90: lighten($Color-Text-100, 10%);
