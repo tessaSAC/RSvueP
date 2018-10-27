@@ -17,17 +17,17 @@ import LabelBasic from './LabelBasic'
 
 // TODO: bind attrs for all components
 export default {
+  components: {
+    LabelBasic,
+  },
+
+  mixins: [ CheckboxMixin, ],
+
   props: {
     checked: {
       type: Boolean,
       default: false,
     },
-  },
-
-  mixins: [ CheckboxMixin, ],
-
-  components: {
-    LabelBasic,
   },
 }
 </script>

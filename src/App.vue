@@ -64,11 +64,28 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #app {
+  display: flex;
+  justify-content: center;
+
+  form {
+    width: 50vw;
+    min-width: 600px;
+    margin: 1rem;
+    overflow: auto;
+    padding: 1rem 2rem;
+    border-radius: 0.2rem;
+    border: 1px solid $Color-Theme-100;
+  }
+
   h1 {
-    margin: 4rem 2.8rem;
+    margin: 2rem 2.8rem;
     font-size: $Text-Size-5XL;
+  }
+
+  .ButtonBasic {
+    margin-bottom: 2rem;
   }
 }
 </style>

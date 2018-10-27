@@ -22,6 +22,13 @@ import CheckboxBasic from './CheckboxBasic'
 import LabelBasic from './LabelBasic'
 
 export default {
+  components: {
+    CheckboxBasic,
+    LabelBasic,
+  },
+
+  mixins: [ CheckboxMixin, ],
+
   props: {
     checked: {
       type: Boolean,
@@ -33,13 +40,6 @@ export default {
       type: Boolean,
       default: false,
     },
-  },
-
-  mixins: [ CheckboxMixin, ],
-
-  components: {
-    CheckboxBasic,
-    LabelBasic,
   },
 
   data: _ => ({
@@ -95,7 +95,7 @@ $nubSize: 1rem;
     width: $nubSize;
     height: $nubSize;
     border-radius: 50%;
-    background-color: $Color-Theme-Enemy-100;
+    background-color: $Color-Theme-Contrast-100;
 
     &.isChecked {
       left: $nubSize;

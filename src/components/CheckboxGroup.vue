@@ -17,6 +17,11 @@ import LabelBasic from './LabelBasic'
 import CheckboxBasic from './CheckboxBasic'
 
 export default {
+  components: {
+    LabelBasic,
+    CheckboxBasic,
+  },
+
   props: {
     disabled: {
       type: Boolean,
@@ -37,11 +42,6 @@ export default {
       required: true,
       type: Object,
     },
-  },
-
-  components: {
-    LabelBasic,
-    CheckboxBasic,
   },
 
   methods: {

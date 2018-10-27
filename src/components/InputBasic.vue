@@ -94,7 +94,7 @@ export default {
 
     &:focus {
       outline: none;
-      border-bottom: 1px solid $Color-Focus;
+      border-bottom: 1px solid $Color-Focus-100;
     }
   }
 }
