@@ -9,7 +9,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:umd": "vue-cli-service build --target lib --name rsvuep [entry]",
+    "build:umd": "vue-cli-service build --target lib --name rsvuep",
     "build:wc:multi": "vue-cli-service build --target wc --name rsvuep 'src/components/*.vue'",
     "build:wc:async": "vue-cli-service build --target wc-async --name rsvuep 'src/components/*.vue'",
     "lint": "vue-cli-service lint"

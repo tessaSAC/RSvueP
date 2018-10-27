@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>rsvuep demo</title>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="../dist/rsvuep.umd.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <input-basic label="it works!"></input-basic>
+  </div>
+
+  <script>
+    new Vue({
+      components: {
+        InputBasic: rsvuep.components.InputBasic,
+      },
+    }).$mount('#app')
+  </script>
+</body>
+
+
