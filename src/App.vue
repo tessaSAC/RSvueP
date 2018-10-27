@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>RSvueP</h1>
     <InputBasic
       id="name"
       label="Your name"
@@ -50,5 +51,9 @@ export default {
 
 <style lang="scss">
 #app {
+  h1 {
+    margin: 4rem 2.8rem;
+    font-size: $Text-Size-5XL;
+  }
 }
 </style>

@@ -43,10 +43,10 @@ $Text-Size-S: 0.8rem;
 $Text-Size-M: 1rem;
 $Text-Size-L: 1.1rem;
 $Text-Size-XL: 1.2rem;
-$Text-Size-2XL: 1.3rem;
-$Text-Size-3XL: 1.4rem;
-$Text-Size-4XL: 1.5rem;
-$Text-Size-5XL: 1.5rem;
+$Text-Size-2XL: 1.4rem;
+$Text-Size-3XL: 1.6rem;
+$Text-Size-4XL: 1.8rem;
+$Text-Size-5XL: 2rem;
 
 
 
@@ -60,5 +60,5 @@ body {
 p { font-size: $Text-Size-S; }
 
 %Input-Container {
-  margin: 1.5rem 2rem;
+  margin: 4rem 2rem;
 }

@@ -69,6 +69,7 @@ export default {
 $nubSize: 1rem;
 
 .CheckboxToggle {
+  @extend %Input-Container;
   display: flex;
   align-items: center;
 
