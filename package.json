@@ -1,10 +1,17 @@
 {
-  "name": "RSvueP",
+  "name": "rsvuep",
   "version": "0.1.0",
-  "private": true,
+  "description": "A Vue.js forms component library",
+  "keywords": [ "vue", "forms" ],
+  "main": "dist/RSvueP.min.js",
+  "author": "tessa",
+  "license": "LGPL-3.0-only",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:umd": "vue-cli-service build --target lib --name RSvueP [entry]",
+    "build:wc:multi": "vue-cli-service build --target wc --name RSvueP 'src/components/*.vue'",
+    "build:wc:async": "vue-cli-service build --target wc-async --name RSvueP 'src/components/*.vue'",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

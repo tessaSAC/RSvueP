@@ -1,26 +1,5 @@
 # RSvueP
 
-## Project setup
-```
-yarn install
-```
+Vue Web Component library for GDG DevFest CT 2018
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
+For usage instructions check [Vue CLI 3.0 docs](https://cli.vuejs.org/guide/build-targets.html#async-web-component)
