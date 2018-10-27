@@ -1,6 +1,6 @@
 <template>
 <div class="InputBasic">
-  <LabelBasic labeling="an id" label="Your name" />
+  <LabelBasic :label="label" />
   <div class="inputContainer">
     <input type="text"
       :ref="id"
@@ -90,6 +90,7 @@ export default {
   input {
     border: none;
     border-bottom: 1px solid $Color-Text-100;
+    font-size: $Text-Size-M;
 
     &:focus {
       outline: none;

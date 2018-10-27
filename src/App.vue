@@ -1,24 +1,33 @@
 <template>
   <div id="app">
-    <h1>RSvueP</h1>
-    <InputBasic
-      id="name"
-      label="Your name"
-      optional
-      @input="updateValue($event, 'textInput')"
-    />
-    <CheckboxGroup :choices="choices" legend="choices" label="choices" />
-    <CheckboxToggle id="binary" label="a toggle" @change="handleToggle" />
+    <form action="/exampleUse" method="post">
+      <h1>RSvueP</h1>
+      <InputBasic
+        id="name"
+        label="Name"
+        @input="updateValue($event, 'name')"
+      />
 
-    <!-- <form action="/mycoolguestlist" method="post">
-    </form> -->
+      <InputBasic
+        id="relationship"
+        label="Relationship"
+        optional
+        @input="updateValue($event, 'relationship')"
+      />
+
+      <CheckboxGroup :options="water" legend="water" label="Water" />
+      <CheckboxToggle id="binary" label="Attending" @change="handleToggle" />
+
+      <ButtonBasic label="RSVP!" />
+    </form>
   </div>
 </template>
 
 <script>
-import InputBasic from './components/InputBasic';
-import CheckboxGroup from './components/CheckboxGroup';
+import InputBasic from './components/InputBasic'
+import CheckboxGroup from './components/CheckboxGroup'
 import CheckboxToggle from './components/CheckboxToggle'
+import ButtonBasic from './components/ButtonBasic'
 
 export default {
   name: "app",
@@ -27,23 +36,29 @@ export default {
     InputBasic,
     CheckboxGroup,
     CheckboxToggle,
+    ButtonBasic,
   },
 
   data: _ => ({
-    textInput: '',
-    choices: {
-      fish: false,
-      veggies: false,
+    name: '',
+
+    relationship: '',
+
+    water: {
+      flat: false,
+      sparkling: false,
     },
-    toggle: false,
+
+    attending: false,
   }),
 
   methods: {
-    handleToggle(e) {
-      console.log('hi', e)
-    },
     updateValue(val, key) {
       this[key] = val
+    },
+
+    handleToggle(e) {
+      this.attending = e
     },
   },
 }

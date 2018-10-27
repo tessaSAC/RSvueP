@@ -4,8 +4,8 @@
   <fieldset :disabled="disabled">
     <legend>{{ legend }}</legend>
     <ul>
-      <li v-for="(value, key) in choices" :key="key">
-        <CheckboxBasic :label="key" @change="choices[key] = $event" />
+      <li v-for="(value, key) in options" :key="key">
+        <CheckboxBasic :label="key" @change="options[key] = $event" />
       </li>
     </ul>
   </fieldset>
@@ -33,7 +33,7 @@ export default {
       default: '',
     },
 
-    choices: {
+    options: {
       required: true,
       type: Object,
     },

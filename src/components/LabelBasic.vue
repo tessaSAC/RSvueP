@@ -1,24 +1,19 @@
 <template>
-<label :for="id" :name="id" class="LabelBasic">{{ label }}</label>
+<label :for="id" :name="id" class="LabelBasic">{{ label }} :</label>
 </template>
 
 <script>
 export default {
   props: {
-    labeling: {
-      type: String,
-      default: '',
-    },
-
     label: {
       type: String,
       default: '',
-    }
+    },
   },
 
   computed: {
     id() {
-      return this.labeling.split(' ').join('_')
+      return this.label.split(' ').join('_')
     }
   }
 }
