@@ -1,63 +1,69 @@
-<meta charset="utf-8">
-<title>rsvuep demo</title>
-<script src="https://unpkg.com/vue"></script>
-<script src="../dist/rsvuep.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>rsvuep demo</title>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="../dist/rsvuep.js"></script>
 
-<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
-<style>
-  body {
-    display: flex;
-    justify-content: center;
-    font-family: 'Muli', sans-serif;
-  }
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      font-family: 'Muli', sans-serif;
+    }
 
-  form {
-    width: 50vw;
-    min-width: 600px;
-    margin: 1rem;
-    overflow: auto;
-    padding: 1rem 2rem;
-    border-radius: 0.2rem;
-    border: 1px solid darkslateblue;
-  }
+    form {
+      width: 50vw;
+      min-width: 600px;
+      margin: 1rem;
+      overflow: auto;
+      padding: 1rem 2rem;
+      border-radius: 0.2rem;
+      border: 1px solid darkslateblue;
+    }
 
-  h1 {
-    margin: 2rem 2.8rem;
-    font-size: 2rem;
-  }
+    h1 {
+      margin: 2rem 2.8rem;
+      font-size: 2rem;
+    }
 
-  .ButtonBasic {
-    margin-bottom: 2rem;
-  }
-</style>
+    .ButtonBasic {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
 
-<form action="/exampleUse" method="post">
-  <h1>RSVP form</h1>
+<body>
+  <form action="/exampleUse" method="post">
+    <h1>RSVP form</h1>
 
-  <rsvuep-input-basic
-    id="Name"
-    label="Name:"
-  ></rsvuep-input-basic>
+    <rsvuep-input-basic
+      id="Name"
+      label="Name:"
+    ></rsvuep-input-basic>
 
-  <rsvuep-checkbox-group
-    legend="Dietary Restrictions"
-    label="Dietary Restrictions:"
-    options='{ "Vegetarian": false, "Vegan": false, "Gluten-free": false }''
-  ></rsvuep-checkbox-group>
+    <rsvuep-checkbox-group
+      legend="Dietary Restrictions"
+      label="Dietary Restrictions:"
+      options='{ "Vegetarian": false, "Vegan": false, "Gluten-free": false }''
+    ></rsvuep-checkbox-group>
 
-  <rsvuep-input-basic
-    id="Allergies?"
-    label="Allergies?"
-  ></rsvuep-input-basic>
+    <rsvuep-input-basic
+      id="Allergies?"
+      label="Allergies?"
+    ></rsvuep-input-basic>
 
-  <rsvuep-checkbox-toggle
-    id="Attending"
-    label="Attending?"
-    checked="true"
-  ></rsvuep-checkbox-toggle>
+    <rsvuep-checkbox-toggle
+      id="Attending"
+      label="Attending?"
+      checked="true"
+    ></rsvuep-checkbox-toggle>
 
-  <rsvuep-button-basic
-    label="SEND RSVP"
-  ></rsvuep-button-basic>
-</form>
+    <rsvuep-button-basic
+      label="SEND RSVP"
+    ></rsvuep-button-basic>
+  </form>
+</body>
