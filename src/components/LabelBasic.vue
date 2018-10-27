@@ -1,5 +1,5 @@
 <template>
-<label :for="id" :name="id" class="LabelBasic">{{ label }} :</label>
+<label :for="id" :name="id" class="LabelBasic">{{ label }}</label>
 </template>
 
 <script>
