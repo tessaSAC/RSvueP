@@ -4,11 +4,14 @@
   <input type="checkbox"
     :id="newId"
     :name="newId"
-    :disabled="disabled"
-    @change="handleCheck"
+    :checked="isChecked"
   />
-  <div class="toggle">
-    <div class="nub" :class="{ checked }" />
+  <div
+    class="toggle"
+    @click="toggleCheckbox"
+  >
+    <div class="nub"
+    :class="{ isChecked }" />
   </div>
 </div>
 </template>
@@ -19,6 +22,19 @@ import CheckboxBasic from './CheckboxBasic'
 import LabelBasic from './LabelBasic'
 
 export default {
+  props: {
+    checked: {
+      type: Boolean,
+      default: false,
+    },
+
+    // TODO: add capability
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
   mixins: [ CheckboxMixin, ],
 
   components: {
@@ -27,20 +43,31 @@ export default {
   },
 
   data: _ => ({
-    checked: false,
+    isChecked: false,
   }),
 
+  watch: {
+    checked() {
+      this.isChecked = this.checked
+    },
+  },
+
+  created() {
+    this.isChecked = this.checked
+  },
+
   methods: {
-    handleCheck(e) {
-      console.log('hi')
-      // this.checked = e
-      // this.$emit('change', e)
+    toggleCheckbox() {
+      this.isChecked = !this.isChecked
+      this.$emit('change', this.checked)
     }
   },
 }
 </script>
 
 <style lang="scss">
+$nubSize: 1rem;
+
 .CheckboxToggle {
   display: flex;
   align-items: center;
@@ -53,17 +80,25 @@ export default {
   }
 
   .toggle {
-    width: 2rem;
-    height: 1rem;
+    position: relative;
+    width: $nubSize * 2;
+    height: $nubSize;
     border-radius: 50%/100%;
     background-color: $Color-Theme-100;
   }
 
   .nub {
-    width: 1rem;
-    height: 1rem;
+    position: relative;
+    left: 0;
+    transition: 100ms ease-in;
+    width: $nubSize;
+    height: $nubSize;
     border-radius: 50%;
     background-color: $Color-Theme-Enemy-100;
+
+    &.isChecked {
+      left: $nubSize;
+    }
   }
 }
 </style>

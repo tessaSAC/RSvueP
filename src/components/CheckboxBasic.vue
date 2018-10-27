@@ -3,6 +3,7 @@
   <input type="checkbox"
     :id="newId"
     :name="newId"
+    :checked="checked"
     :disabled="disabled"
     @change="handleCheck"
   />
@@ -14,7 +15,15 @@
 import CheckboxMixin from './CheckboxMixin'
 import LabelBasic from './LabelBasic'
 
+// TODO: bind attrs for all components
 export default {
+  props: {
+    checked: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
   mixins: [ CheckboxMixin, ],
 
   components: {
