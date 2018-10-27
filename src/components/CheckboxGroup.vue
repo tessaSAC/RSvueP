@@ -4,8 +4,8 @@
   <fieldset :disabled="disabled">
     <legend>{{ legend }}</legend>
     <ul>
-      <li v-for="(value, key) in options" :key="key">
-        <CheckboxBasic :label="key" @change="options[key] = $event" />
+      <li v-for="(value, key) in optionsObj" :key="key">
+        <CheckboxBasic :label="key" @change="optionsObj[key] = $event" />
       </li>
     </ul>
   </fieldset>
@@ -40,8 +40,13 @@ export default {
 
     options: {
       required: true,
-      type: Object,
     },
+  },
+
+  computed: {
+    optionsObj() {
+      return typeof this.options === 'string' ? JSON.parse(this.options) : this.options
+    }
   },
 
   methods: {

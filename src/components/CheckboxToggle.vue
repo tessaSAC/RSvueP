@@ -9,9 +9,11 @@
   <div
     class="toggle"
     @click="toggleCheckbox"
+    :class="{ isChecked }"
   >
-    <div class="nub"
-    :class="{ isChecked }" />
+    <div
+      class="nub"
+    />
   </div>
 </div>
 </template>
@@ -33,6 +35,16 @@ export default {
     checked: {
       type: Boolean,
       default: false,
+    },
+
+    id: {
+      type: String,
+      default: '',
+    },
+
+    label: {
+      type: String,
+      required: true,
     },
 
     // TODO: add capability
@@ -86,6 +98,15 @@ $nubSize: 1rem;
     height: $nubSize;
     border-radius: 50%/100%;
     background-color: $Color-Theme-100;
+    transition: 100ms ease-in;
+
+    &.isChecked {
+      background-color: $Color-Focus-100;
+
+      .nub {
+        left: $nubSize;
+      }
+    }
   }
 
   .nub {
@@ -96,10 +117,6 @@ $nubSize: 1rem;
     height: $nubSize;
     border-radius: 50%;
     background-color: $Color-Theme-Contrast-100;
-
-    &.isChecked {
-      left: $nubSize;
-    }
   }
 }
 </style>
